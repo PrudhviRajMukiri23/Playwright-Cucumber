@@ -6,10 +6,10 @@
             "snippetInterface": "async-await"
         },
         "format": [
-            ["html","./cucumber-reports/cucumber-report.html"],
+            ["html","./cucumber-reports/html-report.html"],
             "summary",
             "progress-bar",
-            "json:./cucumber-reports/cucumber-report.json"
+            "json:./cucumber-reports/json-report.json"
         ]
     }
 }
