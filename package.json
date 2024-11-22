@@ -9,7 +9,7 @@
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.49.0",
-    "@types/node": "^22.9.1",
+    "@types/node": "^22.9.1"
   },
   "dependencies": {
     "@cucumber/cucumber": "^11.1.0"
