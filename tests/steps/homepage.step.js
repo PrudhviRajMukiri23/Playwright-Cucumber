@@ -1,5 +1,6 @@
 const {Given, When, Then, After, Before, setDefaultTimeout}=require('@cucumber/cucumber')
-const {chromium, expect}=require('@playwright/test')
+const {chromium, expect}=require('@playwright/test');
+const { HomePage } = require('../pages/homepage');
 
 setDefaultTimeout(60*1000)
 let page, browser, url
@@ -16,9 +17,10 @@ Given('I have navigated to {string}', async function (string) {
 
 When('I land on Homepage', async function () {
     url = await page.url()
-    console.log(url)
 });
 
 Then('I should land on homepage with proper url and title', async function () {
-    await expect(url).toContain("www.polestar.com/se")
+    const homePage = new HomePage();
+    const homePageUrl = await homePage.getHomePageUrl();
+    await expect(url).toContain(homePageUrl)
 });
