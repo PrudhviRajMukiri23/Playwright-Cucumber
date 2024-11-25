@@ -6,7 +6,13 @@ class TestDrive {
         this.customerListDropDown = "//input[@id='customer-category']/parent::div/div[2]"
         this.customerListResults = "#customer-category-list"
         this.legalCheckbox = "//input[@id='checkbox-legalDocumentsAccepted']"
-
+        this.firstName = "//input[@id='firstname']"
+        this.lastName = "//input[@id='lastname']"
+        this.email = "//input[@id='email']"
+        this.mobileNumber = "//input[@id='phone']"
+        this.postalCode = "//input[@id='postal-code']"
+        this.addressNextPage = "//button[@data-testId='next-page']"
+        this.firstAddressValue = "(//button[@data-testId='selectable-date'])[1]"
     }
 
     async provideModelName() {
@@ -55,17 +61,17 @@ class TestDrive {
         //     //await expect(await page.locator(`//div[@class='css-h1ftor eiequla0']/p[contains(text(),'${value[0]}')]/preceding-sibling::p[contains(text(), '${value[1]}')]`)).toBeVisible()
         //     await page.locator("(//button[@data-testId='selectable-date'])[1]").click()
         //    } else {
-            await page.locator("//button[@data-testId='next-page']").click();
-            await page.locator("(//button[@data-testId='selectable-date'])[1]").click()
+            await page.locator(this.addressNextPage).click();
+            await page.locator(this.firstAddressValue).click()
         //    }
     }
 
     async fillValidContactdetails(page, string, string2, string3, string4, string5) {
-        await page.locator(`//input[@id='firstname']`).fill(string)
-        await page.locator(`//input[@id='lastname']`).fill(string2)
-        await page.locator(`//input[@id='email']`).fill(string3)
-        await page.locator(`//input[@id='phone']`).fill(string4)
-        await page.locator(`//input[@id='postal-code']`).fill(string5)
+        await page.locator(this.firstName).fill(string)
+        await page.locator(this.lastName).fill(string2)
+        await page.locator(this.email).fill(string3)
+        await page.locator(this.mobileNumber).fill(string4)
+        await page.locator(this.postalCode).fill(string5)
     }
 
     async selectCustomerType(page){

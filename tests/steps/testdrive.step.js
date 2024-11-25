@@ -5,8 +5,7 @@ const { HomePage } = require('../pages/homepage');
 const { TestDrive } = require('../pages/testdrive');
 
 setDefaultTimeout(60*1000)
-let page, browser, modelName
-let homePageInstance = '', testdriveInstance = ''
+let page, browser
 
 Before(async function () {
     browser = await chromium.launch({ headless: false });
